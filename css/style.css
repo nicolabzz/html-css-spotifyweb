@@ -1,3 +1,10 @@
+/*--------------- 
+    D- 1440
+    T- 876
+    T&M- 639
+    M-552
+----------------*/
+
 * {
     margin:0;
     padding:0;
@@ -23,7 +30,6 @@ a {
 /* ==========
    aside
 =========== */
-
 .container-aside {
     /* border: 2px solid blue; */
     position: fixed;
@@ -44,6 +50,7 @@ a {
 
 /* aside top section */
 /* logo */
+
 .container-aside-top {
     display: flex;
     flex-direction: column;
@@ -66,6 +73,7 @@ a {
 }
 
 /* nav menu */
+
 .nav-menu {
     /* border: 1px solid cyan; */
 }
@@ -98,6 +106,7 @@ a {
 }
 
 /* playlist */
+
 .nav-playlist {
     /* border: 1px solid lightcoral; */
     line-height: 2rem;
@@ -187,21 +196,143 @@ a {
 }
 
 /* ==========
+   overlay
+=========== */
+.overlay {
+    /* border: 3px solid seagreen; */
+    display: flex;
+    flex-direction: row-reverse;
+	position: fixed;
+	inset: 0 0 auto 0;
+	height: 100px;
+	z-index: 10;
+    background-color: black;
+    opacity: .5;
+}
+
+.upgrade-btn {
+    position: fixed;
+    inset: 30px 30px auto auto;
+    z-index: 15;
+    transition-duration: 0.07s;
+    transition-timing-function: ease-in-out;
+}
+
+.upgrade-btn a {
+    color: white;
+    border: 2px solid white;
+    padding: 1rem 4rem;
+    border-radius: 100px;
+    font-weight: bold;
+}
+
+.upgrade-btn:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+
+/* ==========
    main
 =========== */
+.main-container {
+    border: 3px solid violet;
+    position: fixed;
+    inset: 0 0 85px 300px;
+    background-color: rgba(20,25,34,255);
+    padding: 100px 20px 85px 20px;
+    overflow-y: auto;
+}
 
+.main-container img {
+    width: 100%;
+}
 
+.main-container a {
+    color: white;
+}
 
+.main-container p {
+    color: rgba(108,111,116,255);
+}
+
+.categories ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    padding: 1.5rem;
+}
+
+.categories a {
+    color: rgba(105,109,113,255);
+    font-weight: 800;
+}
+
+.categories li:first-child {
+    border-bottom: 2px solid greenyellow;
+}
+
+/* albums recently */
+.back-play {
+    display: none;
+}
+
+.recently-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 10px;
+}
+
+.recently-section h2, .created-for-section h2, .popularartist-section h2  {
+    color: white;
+    width: 100%;
+}
+
+.box-album {
+    border: 2px solid springgreen;
+    text-align: center;
+    flex: 0 1 auto;
+    width: calc((100% - 1.4rem) / 6);
+    max-width: 300px;
+}
+
+/* almbums created-for */
+.created-for-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 50px;
+}
+
+.created-for-section h2, .created-for-section p {
+    width: 100%;
+
+}
+
+/* album popular artist */
+.popularartist-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.4rem;
+    margin-top: 50px;
+}
+
+.popularartist-section h2, .popularartist-section p {
+    width: 100%;
+}
 
 /* ==========
    footer
 ============*/
-
 /* footer container */
+
 footer {
     display: flex;
     justify-content: center;
     position: fixed;
+    z-index: 30;
     right: 0;
     bottom: 0;
     left: 0;
@@ -220,6 +351,7 @@ footer {
 }
 
 /* footer left side */
+
 .ft.box-left {
     display: flex;
     justify-content: flex-start;
@@ -270,6 +402,7 @@ footer {
 }
 
 /* footer center */
+
 .ft.box-center {
     /* border: 2px solid red; */
     display: flex;
@@ -296,7 +429,12 @@ footer {
 }
 
 .fa-circle-play {
-    font-size: 2.6rem;
+    font-size: 2.2rem;
+    transition-duration: 0.3s ease;
+}
+
+.fa-circle-play:hover {
+    transform: scale(1.2);
 }
 
 .time-bar-container {
@@ -305,7 +443,8 @@ footer {
     justify-content: center;
     align-items: center;
     width: 95%;
-    height: 8px;
+    /* height: 8px; TODO: vedere se va bene*/
+    cursor: pointer;
 }
 
 .timer {
@@ -320,6 +459,7 @@ footer {
     width: 90%;
     height: 4px;
     border-radius: 25px;
+    max-width: 630px;
 }
 
 .time-passed {
@@ -329,39 +469,28 @@ footer {
     background-color: rgba(173,173,173,255);
     height: 100%;
     width: 30%;
+    max-width: 630px;
     border-radius: 25px;
 }
 
-.time-passed span {
-    opacity: 0;
+.sphere {
+    display: none;
     padding: 5px;
-    width: 100%;
+    width: 5px;
     border-radius: 50px;
     background-color: white;
 }
 
-.time-passed span:hover {
-    opacity: 1;
-    padding: 5px;
-    width: 0;
-    border-radius: 50px;
-    background-color: white;
-    cursor: pointer;
-    
-}
-
-.time-passed:hover {
+.time-bar-container:hover .time-passed {
     background-color: greenyellow;
-    height: 5px;
-    cursor: pointer;
-} 
+}
 
-.time-bar:hover {
-    height: 5px;
-    cursor: pointer;
+.time-bar-container:hover .sphere {
+    display: block;
 }
 
 /* footer right */
+
 .ft.box-right {
     /* border: 2px solid lawngreen; */
     display: flex;
@@ -392,7 +521,10 @@ footer {
     border-radius: 25px;
 }
 
-.volume-loud {
+.actual-volume {
+    display: flex;
+    justify-content: end;
+    align-items: center;
     background-color: rgba(173,173,173,255);
     height: 100%;
     flex: 0 10 30%;
@@ -400,13 +532,11 @@ footer {
     border-radius: 25px;
 }
 
-.volume-loud:hover {
+.volume-bar:hover .actual-volume {
     background-color: greenyellow;
-    height: 10px;
 }
 
-.volume-bar:hover {
-    height: 10px;
+.volume-bar:hover .sphere {
+    display: block;
 }
-
 
