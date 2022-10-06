@@ -9,21 +9,36 @@ ul {
     list-style-type: none;
 }
 
+hr {
+    height: .5px;
+    background-color: lightgray;
+    border: none;
+    margin: 4px 0 8px 0;
+}
+
+a {
+    text-decoration: none;
+}
+
 /* ==========
    aside
 =========== */
-.aside {
-}
 
 .container-aside {
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
+    position: fixed;
+    inset: 0 auto 85px 0;
+    width: 300px;
+    z-index: 20;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    height: calc(100vh - 85px); /* rivedere questa parte, questa altezza mi da problemi di visualizzazione se riduco l'altezza del browswer*/
     width: 300px;
     color: rgba(108,108,108,255);
     background-color: black;
+}
+
+.logo, .nav-menu, .nav-playlist, .login-setion {
     padding: 15px 10px 10px 25px;
 }
 
@@ -36,8 +51,14 @@ ul {
 }
 
 .logo {
-    border: 2px solid brown;
+    /* border: 2px solid brown; */
     width: 60%;
+    transition-duration: 0.07s, 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.logo:hover {
+    scale: 1.05;
 }
 
 .logo img {
@@ -46,7 +67,24 @@ ul {
 
 /* nav menu */
 .nav-menu {
-    border: 1px solid skyblue;
+    /* border: 1px solid cyan; */
+}
+
+.nav-menu a {
+    color: rgba(108,108,108,255);
+    transition-duration: 0.07s, 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.fa-house, .nav-menu li:first-child {
+    color: white;
+    cursor: pointer;
+    transition-duration: 0.07s, 1s;
+    transition-timing-function: ease-in-out;
+}
+
+.nav-menu li:first-child:hover {
+    text-decoration: underline;
 }
 
 .menu-list i {
@@ -54,18 +92,42 @@ ul {
     line-height: 2.3rem;
 }
 
+.menu-list a:hover {
+    color: white;
+    font-size: 17px;
+}
+
 /* playlist */
 .nav-playlist {
-    border: 1px solid lightcoral;
+    /* border: 1px solid lightcoral; */
     line-height: 2rem;
+    transition-duration: 0.07s, 1s;
+    transition-timing-function: ease-in-out;
 }
 
 .nav-playlist i {
-    font-size: 2rem;
+    font-size: 2.5rem;
+}
+
+.new-playlist-btn {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.new-playlist-btn span:hover {
+    text-decoration: underline;
+    color: white;
+    font-size: 17px;
+}
+
+.playlists-list li:hover {
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
 }
 
 .nav-playlist a {
-    text-decoration: none;
     color: rgba(163,163,163,255);
 }
 
@@ -73,33 +135,41 @@ ul {
     color: white;
 }
 
-/* aside top bottom */
+/* aside bottom */
 /* login */
-.login-setion {
-    border: 3px solid rebeccapurple;
+.install-app-link, .profile {
+    transition-duration: 0.07s;
+    transition-timing-function: ease-in-out;
 }
 
-.profile-img {
-    width: 20px;
+.install-app-link:hover, .profile:hover {
+    color: white;
+    font-size: 17px;
 }
 
-.install-app-link p {
-    margin-left: 5px;
+.login-setion > a {
+    color: rgba(108,108,108,255);
 }
 
 .install-app-link p {
     display: inline-block;
+    margin-left: 5px;
 }
 
 .profile-img {
     background-color: gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25px;
+    width: 25px;
+    overflow: hidden;
+    border-radius: 50px;   
 }
 
 .profile-img img {
-    height: 25px;
-    width: 20px;
-    object-fit: cover;
-    border-radius: 50px;   
+    height: 80%;
+    width: 80%;
 }
 
 .profile {
@@ -115,8 +185,6 @@ ul {
     font-size: 1rem;
     font-weight: 500;
 }
-
-
 
 /* ==========
    main
@@ -173,6 +241,11 @@ footer {
     padding: 1rem;
 }
 
+.now-palying-title p:hover, .now-palying-title span:hover {
+    text-decoration: underline;
+    cursor: pointer;
+}
+
 .now-palying-title span {
     color: white;
 }
@@ -212,9 +285,18 @@ footer {
     /* border: 2px solid greenyellow; */
     display: flex;
     justify-content: space-around;
-    width: 40%;
-    font-size: 1.5rem;
+    align-items: center;
+    width: 35%;
     color: white;
+    font-size: 1.2rem;
+}
+
+.center-ft-btn i {
+    cursor: pointer;
+}
+
+.fa-circle-play {
+    font-size: 2.6rem;
 }
 
 .time-bar-container {
@@ -226,9 +308,9 @@ footer {
     height: 8px;
 }
 
-.time-bar-container p {
+.timer {
     color: white;
-    font-size: 10px;
+    font-size: 12px;
     padding: 0 1.5rem;
     font-weight: 500;
 }
@@ -239,18 +321,44 @@ footer {
     height: 4px;
     border-radius: 25px;
 }
+
 .time-passed {
+    display: flex;
+    align-items: center;
+    justify-content: end;
     background-color: rgba(173,173,173,255);
     height: 100%;
     width: 30%;
     border-radius: 25px;
 }
+
+.time-passed span {
+    opacity: 0;
+    padding: 5px;
+    width: 100%;
+    border-radius: 50px;
+    background-color: white;
+}
+
+.time-passed span:hover {
+    opacity: 1;
+    padding: 5px;
+    width: 0;
+    border-radius: 50px;
+    background-color: white;
+    cursor: pointer;
+    
+}
+
 .time-passed:hover {
     background-color: greenyellow;
-    height: 10px;
-}
+    height: 5px;
+    cursor: pointer;
+} 
+
 .time-bar:hover {
-    height: 10px;
+    height: 5px;
+    cursor: pointer;
 }
 
 /* footer right */
@@ -267,7 +375,14 @@ footer {
 .right-ft-btn {
     display: flex;
     gap: 1rem;
+    cursor: pointer;
 }
+
+.right-ft-btn i:hover {
+    color: white;
+    text-shadow: 0 0 5px lightgray;
+}
+
 .volume-bar {
     /* border: 1px solid goldenrod; */
     display: flex;
@@ -276,6 +391,7 @@ footer {
     width: 60%;
     border-radius: 25px;
 }
+
 .volume-loud {
     background-color: rgba(173,173,173,255);
     height: 100%;
@@ -283,10 +399,12 @@ footer {
     min-width: 40px;
     border-radius: 25px;
 }
+
 .volume-loud:hover {
     background-color: greenyellow;
     height: 10px;
 }
+
 .volume-bar:hover {
     height: 10px;
 }

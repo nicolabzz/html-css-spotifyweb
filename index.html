@@ -25,19 +25,23 @@
         <div class="container-aside">
             <div class="container-aside-top">
                 <div class="logo">
-                    <img src="spotify/img/logo.svg" alt="">
+                    <a href="https://open.spotify.com/"><img src="spotify/img/logo.svg" alt=""></a>
                 </div>
                 <nav class="nav-menu">
                     <ul class="menu-list">
-                        <li><i class="fa-solid fa-house"></i> Home</li>
-                        <li><i class="fa-solid fa-magnifying-glass"></i> Serch</li>
-                        <li><i class="fa-solid fa-book"></i> Your library</li>
+                        <li><a href=""><i class="fa-solid fa-house"></i> </a>Home</li>
+                        <li><a href=""><i class="fa-solid fa-magnifying-glass"></i> Serch</a></li>
+                        <li><a href=""><i class="fa-solid fa-book"></i> Your library</a></li>
                     </ul>
                 </nav>
                 <nav class="nav-playlist">
                     <h4>PLAYLIST</h4>
-                    <a href=""><i class="fa-solid fa-square-plus"></i></a>
-                    <a href="">Create playlist</a>
+                    <a href="">
+                        <div class="new-playlist-btn">
+                            <i class="fa-solid fa-square-plus"></i>
+                            <span>Create playlist</span>
+                        </div>
+                    </a>
                     <ul class="playlists-list">
                         <li>Playlist name</li>
                         <li>Playlist name</li>
@@ -51,16 +55,21 @@
             </div>
             <div class="container-aside-bottom"> 
                 <div class="login-setion">
-                    <div class="install-app-link">
-                        <i class="fa-regular fa-circle-down"></i>
-                        <p>Install App</p>
-                    </div>
-                    <div class="profile">
-                        <div class="profile-img">
-                            <img src="spotify/img/profile.svg" alt="">
+                    <a href="">
+                        <div class="install-app-link">
+                            <i class="fa-regular fa-circle-down"></i>
+                            <p>Install App</p>
                         </div>
-                        <p> Nicola Bz</p>
-                    </div>
+                    </a>
+                    <hr>
+                    <a href="">
+                        <div class="profile">
+                            <div class="profile-img">
+                                <img src="spotify/img/profile.svg" alt="">
+                            </div>
+                            <p> Nicola Bz</p>
+                        </div>
+                    </a>
                 </div>
             </div>
         </div>
@@ -92,12 +101,13 @@
                     <i class="fa-solid fa-rotate-right"></i>
                 </div>
                 <div class="time-bar-container">
-                    <p id="timer">1:26</p>
+                    <p class="timer">1:26</p>
                     <div class="time-bar">
                         <div class="time-passed">
+                            <span></span>
                         </div>
                     </div>
-                    <p id="timer">4:20</p>
+                    <p class="timer">4:20</p>
                 </div>
             </div>
             <div class="ft box-right">
