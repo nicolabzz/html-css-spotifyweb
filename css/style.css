@@ -34,12 +34,11 @@ a {
     /* border: 2px solid blue; */
     position: fixed;
     inset: 0 auto 85px 0;
-    width: 300px;
+    width: 230px;
     z-index: 20;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 300px;
     color: rgba(108,108,108,255);
     background-color: black;
 }
@@ -224,6 +223,7 @@ a {
     padding: 1rem 4rem;
     border-radius: 100px;
     font-weight: bold;
+    opacity: 1;
 }
 
 .upgrade-btn:hover {
@@ -236,12 +236,20 @@ a {
    main
 =========== */
 .main-container {
-    border: 3px solid violet;
+    /* border: 3px solid violet; */
     position: fixed;
-    inset: 0 0 85px 300px;
+    inset: 0 0 85px 230px;
     background-color: rgba(20,25,34,255);
     padding: 100px 20px 85px 20px;
     overflow-y: auto;
+}
+
+.centering-container {
+    /* border: 2px solid darkorange ; */
+    height: auto;
+    width: auto;
+    margin: auto;
+    max-width: 1440px;
 }
 
 .main-container img {
@@ -273,15 +281,23 @@ a {
     border-bottom: 2px solid greenyellow;
 }
 
-/* albums recently */
 .back-play {
+    position: absolute;
+    width: 100%;
+    aspect-ratio: 1/1;
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    font-size: 95px;
+    inset: 0 auto auto 0;
     display: none;
 }
+/* albums recently played */
 
 .recently-section {
     display: flex;
     flex-wrap: wrap;
-    gap: 1.4rem;
+    gap: .7rem;
     margin-top: 10px;
 }
 
@@ -291,12 +307,19 @@ a {
 }
 
 .box-album {
-    border: 2px solid springgreen;
+    /* border: 2px solid springgreen; */
+    position: relative;
     text-align: center;
     flex: 0 1 auto;
-    width: calc((100% - 5 * 1.4rem) / 6);
+    width: calc((100% - 5 * .7rem) / 6);
     max-width: 300px;
     min-width: 150px;
+}
+
+.box-album:hover .back-play {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 /* almbums created-for */
@@ -412,6 +435,7 @@ footer {
     justify-content: space-evenly;
     height: 100%;
     width: 50rem;
+
     
 }
 
@@ -423,6 +447,7 @@ footer {
     width: 35%;
     color: white;
     font-size: 1.2rem;
+    gap: .5rem;
 }
 
 .center-ft-btn i {
@@ -541,3 +566,111 @@ footer {
     display: block;
 }
 
+@media only screen and (max-width:876px) {
+    .box-album {
+        /* border: 2px solid firebrick; */
+        flex: 1 2 auto;
+        width: calc((100% - 3 * .7rem) / 4);
+        min-width: 130px;
+    }
+}
+
+@media only screen and (max-width:639px) {
+    .box-album {
+        /* border: 2px solid springgreen; */
+        flex: 1 1 auto;
+        width: calc((100% - .7rem) / 2);
+        min-width: auto;
+    }
+}
+
+@media only screen and (max-width:580px) {
+    .box-album {
+        /* border: 2px solid springgreen; */
+        flex: 1 1 auto;
+        width: calc((100% - .7rem) / 2);
+        min-width: auto;
+    }
+
+    .main-container {
+        inset: 0 0 85px 50px;
+    }
+
+    .container-aside {
+        display: none;
+    }
+
+    /*=====
+     sidebar 
+     ======*/
+    
+     aside {
+        position: fixed;
+        inset: 0 auto 85px 0;
+        width: 50px;
+        z-index: 20;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        padding-top: .6rem;
+        color: rgba(108,108,108,255);
+        background-color: black;
+    }
+
+
+
+    .top-bar552 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    .logo-small {
+        width: 37px;
+    }
+
+    aside .m552 {
+        width: 25px;
+    }
+
+
+
+    .bottom-m552 {
+        /* border: 2px solid aqua; */
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+        padding-bottom: .7rem;
+    }
+
+    .bottom-m552 img {
+        width: 100%;
+    }
+
+    .bottom-m552 div:first-child {
+        height: 19px;
+        width: 19px;
+    }
+
+    .bottom-m552 div:last-child {
+        height: 30px;
+        width: 30px;
+        background-color: gray;
+        border-radius: 50%;
+        overflow: hidden;
+    }
+
+    .categories ul {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .categories ul li {
+        flex-direction: column;
+        flex-wrap:wrap;
+    }
+}
