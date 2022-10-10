@@ -47,6 +47,10 @@ a {
     padding: 15px 10px 10px 25px;
 }
 
+.top-bar552, .bottom-m552 {
+    display: none;
+}
+
 /* aside top section */
 /* logo */
 
@@ -72,10 +76,6 @@ a {
 }
 
 /* nav menu */
-
-.nav-menu {
-    /* border: 1px solid cyan; */
-}
 
 .nav-menu a {
     color: rgba(108,108,108,255);
@@ -282,15 +282,15 @@ a {
 }
 
 .back-play {
+    display: none;
     position: absolute;
+    inset: 0 auto auto 0;
     width: 100%;
-    aspect-ratio: 1/1;
+    color: white;
     background-color: black;
     opacity: 0.5;
-    color: white;
     font-size: 95px;
-    inset: 0 auto auto 0;
-    display: none;
+    aspect-ratio: 1/1;
 }
 /* albums recently played */
 
