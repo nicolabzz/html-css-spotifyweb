@@ -554,7 +554,6 @@ footer {
     background-color: rgba(173,173,173,255);
     height: 100%;
     flex: 0 10 30%;
-    min-width: 40px;
     border-radius: 25px;
 }
 
